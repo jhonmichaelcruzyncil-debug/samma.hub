@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samma.hub - Moda Femenina</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+    <div class="container">
+        <img src="assets/logo/Logo-vv1.jpg" alt="Samma.hub Logo" class="logo">
+
+<div class="menu-toggle" id="menuToggle">
+    ☰
+</div>
+   
+<nav class="nav" id="navMenu">
+
+    <a href="#home">Inicio</a>
+
+    <!-- CATÁLOGO -->
+    <div class="dropdown">
+        <a href="#catalogo" class="dropdown-btn">Catálogo</a>
+        <div class="dropdown-menu">
+            <a href="#">Polos y Tops</a>
+            <a href="#">Blusas y Camisas</a>
+            <a href="#">Bodies</a>
+            <a href="#">Vestidos y Enterizos</a>
+            <a href="#">Abrigos, Casacas, Blazers y Chalecos</a>
+            <a href="#">Pantalones</a>
+            <a href="#">Denim</a>
+            <a href="#">Faldas y Shorts</a>
+            <a href="#" class="ver-todo">Ver todo</a>
+        </div>
+    </div>
+
+    <!-- BÁSICOS -->
+    <div class="dropdown">
+        <a href="#basicos" class="dropdown-btn">Básicos</a>
+        <div class="dropdown-menu">
+            <a href="#">Tops Básicos</a>
+            <a href="#">Bodies Básicos</a>
+            <a href="#">Blusas Básicos</a>
+            <a href="#">Vestidos Básicos</a>
+            <a href="#">Bottoms Básicos</a>
+        </div>
+    </div>
+
+    <a href="#shop">Tienda</a>
+    <a href="#about">Nosotras</a>
+    <a href="#" id="contactBtn">Contacto</a>
+
+    <a href="#cart" class="cart-icon">🛒</a>
+</nav>
+
+    </div>
+</header>
+
+    <!-- Hero / Banner -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Bienvenida a Samma.hub</h1>
+            <p>Descubre moda femenina con estilo y actitud 💖</p>
+            <button onclick="scrollToShop()">Ver productos</button>
+        </div>
+    </section>
+
+
+
+<!-- SECCIÓN TIENDAS FÍSICAS -->
+<section id="stores" class="stores-section">
+    <div class="stores-container">
+
+        <h2>Nuestras Tiendas</h2>
+
+        <div class="store">
+            <h3>Galería Damero – Tienda 105</h3>
+            <p>Centro de Lima</p>
+            <iframe 
+                src="https://www.google.com/maps?q=Galería%20Damero%20tienda%20105&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="store">
+            <h3>Galería La Koketa – Tienda B 103</h3>
+            <p>Centro Comercial</p>
+            <iframe 
+                src="https://www.google.com/maps?q=Galería%20La%20Koketa%20tienda%20B%20103&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECCIÓN NOSOTRAS -->
+<section id="about-section" class="about-section">
+    <div class="about-container">
+
+        <h2>Nosotras</h2>
+
+        <div class="about-content">
+            <!-- TEXTO -->
+            <div class="about-text">
+
+                <h3>✦ Quiénes Somos</h3>
+                <p>
+                    Samma.hub nace de la unión y creatividad de tres hermanas que encontraron en la moda una forma de expresión.
+                    Nos encargamos de cada detalle del proceso, desde la creación hasta la búsqueda constante de nuevas innovaciones,
+                    dando vida a prendas auténticas, modernas y cuidadosamente elaboradas.
+                    Diseñamos para quienes valoran la feminidad, el estilo y la identidad en cada pieza.
+                </p>
+
+                <h3>✦ Misión</h3>
+                <p>
+                    Crear prendas con diseño y propósito, combinando calidad, innovación y sensibilidad femenina,
+                    para acompañar a personas que desean expresar su esencia con seguridad y estilo.
+                </p>
+
+                <h3>✦ Visión</h3>
+                <p>
+                    Convertirnos en una marca referente que inspire confianza y autenticidad,
+                    reconocida por su estética, dedicación y la pasión que se siente en cada detalle.
+                </p>
+
+            </div>
+
+            <!-- IMAGEN -->
+            <div class="about-image">
+                <img src="assets/about/nosotras.jpg" alt="Samma.hub - Nosotras">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- CATÁLOGO -->
+<section id="catalogo" class="shop reveal">
+
+    <h2>Colección Samma.hub</h2>
+
+    <div class="products-grid">
+
+        <div class="product-card">
+            <img src="assets/products/top1.jpg" alt="Top Samma">
+            <h3>Top Básico</h3>
+            <p>S/ 59.90</p>
+            <button class="btn add-to-cart"
+                    data-name="Top Básico"
+                    data-price="59.90">
+                Comprar
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/products/dress1.jpg" alt="Vestido Samma">
+            <h3>Vestido Moderno</h3>
+            <p>S/ 119.90</p>
+            <button class="btn add-to-cart"
+                    data-name="Vestido Moderno"
+                    data-price="119.90">
+                Comprar
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/products/pants1.jpg" alt="Pantalón Samma">
+            <h3>Pantalón Elegante</h3>
+            <p>S/ 89.90</p>
+            <button class="btn add-to-cart"
+                    data-name="Pantalón Elegante"
+                    data-price="89.90">
+                Comprar
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- BENEFICIOS -->
+<section class="benefits">
+    <div class="benefits-container">
+        <div class="benefit">
+            <span>🚚</span>
+            <p><strong>ENVÍOS GRATIS</strong><br>Por compras mayores a S/149</p>
+        </div>
+        <div class="benefit">
+            <span>🔒</span>
+            <p><strong>PAGOS 100% SEGUROS</strong><br>Con Mercado Pago</p>
+        </div>
+        <div class="benefit">
+            <span>💳</span>
+            <p><strong>CUOTAS SIN INTERESES</strong><br>Con todas las tarjetas</p>
+        </div>
+        <div class="benefit">
+            <span>📍</span>
+            <p><strong>RECOJO GRATIS</strong><br>En nuestras tiendas</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-info">
+    <div class="footer-bottom">
+        <p>© 2026 Samma.hub | Moda Femenina</p>
+            <div class="socials">
+                <a href="https://www.instagram.com/samma.hub/" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@samma.hub" target="_blank">TikTok</a>
+                <a href="#">Facebook</a>
+            </div>
+    </div>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+
+<!-- MODAL CONTACTO -->
+<div id="contactModal" class="modal">
+
+    <div class="modal-box">
+        <span class="modal-close">&times;</span>
+
+        <h2>Contáctanos</h2>
+        <p>Puedes escribirnos o contactarnos por nuestras redes sociales y WhatsApp.</p>
+
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Apellido" required>
+            <input type="tel" placeholder="Teléfono" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="modal-links">
+            <a href="https://www.instagram.com/samma.hub/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@samma.hub" target="_blank">TikTok</a>
+            <a href="https://wa.me/51952773283" target="_blank">WhatsApp</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- WHATSAPP FLOTANTE SAMMA.HUB -->
+
+<a href="https://wa.me/51952773283?text=Hola%20Samma.hub%20quisiera%20más%20información%20de%20la%20prendas%20publicadas"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="WhatsApp Samma.hub">
+   💬
+</a>
+
+
+
+</body>
+</html>
