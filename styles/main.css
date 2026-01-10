@@ -346,6 +346,58 @@ footer {
     color: #777;
 }
 
+/* =================FOOTER INFO================= */
+.footer-info {
+    background: #f8f8f8;
+    padding: 40px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-column p,
+.footer-column a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-column input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+.footer-column button {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-top: 20px;
+}
+
+
 /* ================= MODAL ================= */
 .modal {
     position: fixed;
@@ -449,3 +501,4 @@ footer {
 /**************************************************/
 
 /**************************************************/
+
