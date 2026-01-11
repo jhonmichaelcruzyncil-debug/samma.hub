@@ -193,36 +193,53 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
 /* tarjeta producto */
 .product-card {
     background: #fff;
     border: 1px solid #eee;
-    padding: 16px;
+    padding: 18px;
     text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .product-card img {
     width: 100%;
-    transition: transform 0.3s ease;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin-bottom: 14px;
 }
 
+
 .product-card h3 {
-    margin: 12px 0 6px;
     font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
 }
 
 .product-card p {
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 14px;
 }
 
+.product-card .btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .product-card img:hover {
@@ -246,12 +263,23 @@ body {
 }
 
 .benefit span {
-    font-size: 30px;
-    margin-bottom: 10px;
-    display: block;
+    font-size: 26px;
+    opacity: 0.85;
+}
+
+.benefit p {
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 /* ================= TIENDAS ================= */
+.store {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
 .stores-section {
     max-height: 0;
     overflow: hidden;
@@ -278,12 +306,12 @@ body {
 }
 
 .store h3 {
-    margin-bottom: 5px;
+    font-size: 16px;
+    margin-bottom: 6px;
 }
 
 .store p {
-    color: #666;
-    margin-bottom: 15px;
+    font-size: 14px;
 }
 
 .store iframe {
@@ -292,6 +320,7 @@ body {
     border: none;
 }
 
+
 /* ================= NOSOTRAS ================= */
 .about-section {
     max-height: 0;
@@ -299,14 +328,34 @@ body {
     transition: max-height 0.6s ease;
 }
 
+.about-section {
+    background: #fafafa;
+}
+
+
 .about-section.active {
     max-height: 2000px;
 }
 
 .about-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
-    padding: 50px 20px;
+    padding: 80px 20px;
+}
+
+.about-container h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+.about-text h3 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .about-content {
@@ -316,14 +365,16 @@ body {
 }
 
 .about-text p {
-    line-height: 1.7;
-    color: #555;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #444;
 }
 
 .about-image img {
-    width: 100%;
-    border-radius: 6px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
+
 
 /* ================= FOOTER ================= */
 footer {
@@ -345,6 +396,8 @@ footer {
     margin-top: 20px;
     color: #777;
 }
+
+
 
 /* =================FOOTER INFO================= */
 .footer-info {
@@ -536,7 +589,4 @@ footer {
 /**************************************************/
 /**************************************************/
 /**************************************************/
-
 /**************************************************/
-
-
