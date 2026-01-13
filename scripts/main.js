@@ -114,6 +114,47 @@ window.addEventListener("scroll", () => {
 
 /*********************************************/
 
+// ================= SECCIONES LEGALES =================
+
+// Términos
+const termsLink = document.querySelector('a[href="#terms"]');
+const termsSection = document.getElementById("terms");
+
+termsLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    termsSection.classList.toggle("active");
+    termsSection.scrollIntoView({ behavior: "smooth" });
+});
+
+// Políticas
+const returnsLink = document.querySelector('a[href="#returns"]');
+const returnsSection = document.getElementById("returns");
+
+returnsLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    returnsSection.classList.toggle("active");
+    returnsSection.scrollIntoView({ behavior: "smooth" });
+});
+
 
 
 /*********************************************/
+
+// ================= BUSCADOR DE PRODUCTOS =================
+
+const searchInput = document.getElementById("searchInput");
+const productCards = document.querySelectorAll(".product-card");
+
+searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase();
+
+    productCards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+
+        if (title.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
