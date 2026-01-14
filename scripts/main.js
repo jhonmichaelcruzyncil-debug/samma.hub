@@ -102,29 +102,6 @@ window.addEventListener("scroll", () => {
 
 /*********************************************/
 
-// ================= SECCIONES LEGALES =================
-
-// Términos
-const termsLink = document.querySelector('a[href="#terms"]');
-const termsSection = document.getElementById("terms");
-
-termsLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    termsSection.classList.toggle("active");
-    termsSection.scrollIntoView({ behavior: "smooth" });
-});
-
-// Políticas
-const returnsLink = document.querySelector('a[href="#returns"]');
-const returnsSection = document.getElementById("returns");
-
-returnsLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    returnsSection.classList.toggle("active");
-    returnsSection.scrollIntoView({ behavior: "smooth" });
-});
-
-
 
 /*********************************************/
 
@@ -177,3 +154,32 @@ closeStores.addEventListener("click", () => {
     storesModal.classList.remove("show");
 });
 
+/*********************************************/
+
+// TÉRMINOS
+const termsLink = document.querySelector('a[href="#terms"]');
+const termsModal = document.getElementById("termsModal");
+const closeTerms = document.getElementById("closeTerms");
+
+termsLink.addEventListener("click", e => {
+    e.preventDefault();
+    termsModal.classList.add("show");
+});
+
+closeTerms.addEventListener("click", () => {
+    termsModal.classList.remove("show");
+});
+
+// POLÍTICAS
+const policyLink = document.querySelector('a[href="#policy"]');
+const policyModal = document.getElementById("policyModal");
+const closePolicy = document.getElementById("closePolicy");
+
+policyLink.addEventListener("click", e => {
+    e.preventDefault();
+    policyModal.classList.add("show");
+});
+
+closePolicy.addEventListener("click", () => {
+    policyModal.classList.remove("show");
+});

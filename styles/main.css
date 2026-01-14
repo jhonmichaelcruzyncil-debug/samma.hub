@@ -665,6 +665,24 @@ footer {
     text-align: center;
 }
 
+/* ================= TEXTOS LEGALES ================= */
+
+.legal-text {
+    margin-top: 20px;
+}
+
+.legal-text h4 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.legal-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+}
 
 
 /**************************************************/
