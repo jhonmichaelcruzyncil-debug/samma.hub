@@ -22,6 +22,7 @@
 <nav class="nav" id="navMenu">
 
     <a href="#home">Inicio</a>
+    <a href="#new-in" class="new-in">NEW IN</a>
 
     <!-- CATÁLOGO -->
     <div class="dropdown">
@@ -71,76 +72,6 @@
         </div>
     </section>
 
-
-<!-- SECCIÓN TIENDAS FÍSICAS -->
-<section id="stores" class="stores-section">
-    <div class="stores-container">
-
-        <h2>Nuestras Tiendas</h2>
-
-        <div class="store">
-            <h3>Galería Damero – Tienda 105</h3>
-            <p>Centro de Lima</p>
-            <iframe 
-                src="https://www.google.com/maps?q=Galería%20Damero%20tienda%20105&output=embed"
-                loading="lazy">
-            </iframe>
-        </div>
-
-        <div class="store">
-            <h3>Galería La Koketa – Tienda B 103</h3>
-            <p>Centro Comercial</p>
-            <iframe 
-                src="https://www.google.com/maps?q=Galería%20La%20Koketa%20tienda%20B%20103&output=embed"
-                loading="lazy">
-            </iframe>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- SECCIÓN NOSOTRAS -->
-<section id="about-section" class="about-section">
-    <div class="about-container">
-
-        <h2>Nosotras</h2>
-
-        <div class="about-content">
-            <!-- TEXTO -->
-            <div class="about-text">
-
-                <h3>✦ Quiénes Somos</h3>
-                <p>
-                    Samma.hub nace de la unión y creatividad de tres hermanas que encontraron en la moda una forma de expresión.
-                    Nos encargamos de cada detalle del proceso, desde la creación hasta la búsqueda constante de nuevas innovaciones,
-                    dando vida a prendas auténticas, modernas y cuidadosamente elaboradas.
-                    Diseñamos para quienes valoran la feminidad, el estilo y la identidad en cada pieza.
-                </p>
-
-                <h3>✦ Misión</h3>
-                <p>
-                    Crear prendas con diseño y propósito, combinando calidad, innovación y sensibilidad femenina,
-                    para acompañar a personas que desean expresar su esencia con seguridad y estilo.
-                </p>
-
-                <h3>✦ Visión</h3>
-                <p>
-                    Convertirnos en una marca referente que inspire confianza y autenticidad,
-                    reconocida por su estética, dedicación y la pasión que se siente en cada detalle.
-                </p>
-
-            </div>
-
-            <!-- IMAGEN -->
-            <div class="about-image">
-                <img src="assets/about/nosotras.jpg" alt="Samma.hub - Nosotras">
-            </div>
-        </div>
-
-    </div>
-</section>
-
 <!-- BUSCADOR -->
 <section class="search-section">
     <input 
@@ -150,11 +81,20 @@
         aria-label="Buscar productos Samma.hub">
 </section>
 
+<!-- SECCIÓN NEW IN-->
+ <section id="new-in" class="shop reveal">
+    <h2>NEW IN</h2>
+
+    <div class="products-grid">
+        <!-- Aquí luego pondremos productos nuevos -->
+    </div>
+</section>
+
 
 <!-- CATÁLOGO -->
 <section id="catalogo" class="shop reveal">
 
-    <h2>Colección Samma.hub</h2>
+    <h2>CATÁLOGO</h2>
 
     <div class="products-grid">
 
@@ -320,6 +260,69 @@
         </p>
     </div>
 </section>
+
+<!-- MODAL TIENDA -->
+<div id="storesModal" class="modal modal-large">
+
+    <div class="modal-box modal-wide">
+        <span class="modal-close" id="closeStores">&times;</span>
+
+        <h2>Nuestras Tiendas</h2>
+
+        <div class="store">
+            <h3>Galería Damero – Tienda 105</h3>
+            <p>La Victoria - Lima</p>
+            <iframe src="https://www.google.com/maps?q=Galería%20Damero%20tienda%20105&output=embed" loading="lazy"></iframe>
+        </div>
+
+        <div class="store">
+              <h3>Galería La Koketa – Tienda B 103</h3>
+            <p>La Victoria - Lima</p>
+            <iframe src="https://www.google.com/maps?q=Galería%20La%20Koketa%20tienda%20B%20103&output=embed" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL NOSOTRAS -->
+<div id="aboutModal" class="modal modal-large">
+    <div class="modal-box modal-wide">
+        <span class="modal-close" id="closeAbout">&times;</span>
+         
+            <div class="modal-content-grid">
+
+                <div class="modal-image">
+                    <img src="assets/about/nosotras.jpg" alt="Samma.hub Nosotras">
+            </div>
+
+    <div class="modal-text">
+        <h3>✦ Quiénes Somos</h3>
+        <p>
+            Samma.hub nace de la unión y creatividad de tres hermanas que encontraron en la moda una forma de expresión.
+            Nos encargamos de cada detalle del proceso, desde la creación hasta la búsqueda constante de nuevas innovaciones,
+            dando vida a prendas auténticas, modernas y cuidadosamente elaboradas.
+            Diseñamos para quienes valoran la feminidad, el estilo y la identidad en cada pieza.
+        </p>
+
+        <h3>✦ Misión</h3>
+
+        <p>
+            Crear prendas con diseño y propósito, combinando calidad, innovación y sensibilidad femenina,
+            para acompañar a personas que desean expresar su esencia con seguridad y estilo.
+        </p>
+
+        <h3>✦ Visión</h3>
+
+        <p>
+            Convertirnos en una marca referente que inspire confianza y autenticidad,
+            reconocida por su estética, dedicación y la pasión que se siente en cada detalle.
+        </p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>

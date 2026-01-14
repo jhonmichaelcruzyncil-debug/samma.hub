@@ -69,6 +69,20 @@ body {
     width: 100%;
 }
 
+.nav .new-in {
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav .new-in::after {
+    content: "•";
+    color: #d4af37; /* dorado suave */
+    margin-left: 6px;
+}
+
+
+
 /* ================= DROPDOWN ================= */
 .dropdown {
     position: relative;
@@ -509,6 +523,40 @@ footer {
     text-decoration: none;
     font-weight: 500;
     color: #000;
+}
+
+/* ================= MODALES PREMIUM ================= */
+
+.modal-large {
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-wide {
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Layout Nosotras */
+.modal-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.modal-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .modal-content-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 

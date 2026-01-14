@@ -10,18 +10,6 @@ if (tiendaLink) {
     });
 }
 
-/* ================= NOSOTRAS ================= */
-const aboutLink = document.querySelector('a[href="#about"]');
-const aboutSection = document.getElementById("about-section");
-
-if (aboutLink) {
-    aboutLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        aboutSection.classList.toggle("active");
-        aboutSection.scrollIntoView({ behavior: "smooth" });
-    });
-}
-
 /* ================= MODAL CONTACTO ================= */
 const contactBtn = document.getElementById("contactBtn");
 const modal = document.getElementById("contactModal");
@@ -158,3 +146,34 @@ searchInput.addEventListener("input", () => {
         }
     });
 });
+
+/*********************************************/
+
+// MODAL NOSOTRAS
+const aboutBtn = document.querySelector('a[href="#about"]');
+const aboutModal = document.getElementById("aboutModal");
+const closeAbout = document.getElementById("closeAbout");
+
+aboutBtn.addEventListener("click", e => {
+    e.preventDefault();
+    aboutModal.classList.add("show");
+});
+
+closeAbout.addEventListener("click", () => {
+    aboutModal.classList.remove("show");
+});
+
+// MODAL TIENDAS
+const storeBtn = document.querySelector('a[href="#shop"]');
+const storesModal = document.getElementById("storesModal");
+const closeStores = document.getElementById("closeStores");
+
+storeBtn.addEventListener("click", e => {
+    e.preventDefault();
+    storesModal.classList.add("show");
+});
+
+closeStores.addEventListener("click", () => {
+    storesModal.classList.remove("show");
+});
+
