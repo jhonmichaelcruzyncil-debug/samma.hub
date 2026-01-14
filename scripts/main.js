@@ -25,7 +25,13 @@ if (menuToggle && navMenu) {
 
 /* ================= CARRITO ================= */
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function getUserCartKey() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    return user ? `cart_${user.email}` : "cart_guest";
+}
+
+let cart = JSON.parse(localStorage.getItem(getUserCartKey())) || [];
+
 
 const cartIcon = document.querySelector(".cart-icon");
 const cartModal = document.getElementById("cartModal");
@@ -35,19 +41,15 @@ const cartTotal = document.getElementById("cartTotal");
 const checkoutBtn = document.getElementById("checkoutBtn");
 
 function saveCart() {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem(getUserCartKey(), JSON.stringify(cart));
 }
+
 
 function updateCartCount() {
     if (!cartIcon) return;
 
-    let totalQty = 0;
-
-    cart.forEach(item => {
-        totalQty += item.qty;
-    });
-
-    cartIcon.textContent = `🛒 ${totalQty}`;
+    const count = cart.reduce((acc, item) => acc + item.qty, 0);
+    cartIcon.textContent = `🛒 ${count}`;
 }
 
 
@@ -129,8 +131,17 @@ document.querySelectorAll(".add-to-cart").forEach(btn => {
 
 
 /* WHATSAPP */
+
 checkoutBtn.addEventListener("click", () => {
-    let message = "Hola Samma.hub, quiero realizar este pedido:%0A%0A";
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) {
+        alert("Inicia sesión para continuar");
+        document.getElementById("loginModal").classList.add("show");
+        return;
+    }
+
+    let message = `Hola Samma.hub, soy ${user.email} y quiero realizar este pedido:%0A%0A`;
     let total = 0;
 
     cart.forEach((item, i) => {
@@ -139,7 +150,15 @@ checkoutBtn.addEventListener("click", () => {
     });
 
     message += `%0ATotal: S/ ${total.toFixed(2)}`;
-    window.open(`https://wa.me/51952773283?text=${message}`, "_blank");
+
+    window.open(
+        `https://wa.me/51952773283?text=${message}`,
+        "_blank"
+    );
+});
+
+document.querySelector(".btn-outline").addEventListener("click", () => {
+    document.getElementById("cartModal").classList.remove("show");
 });
 
 updateCartCount();
