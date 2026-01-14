@@ -887,33 +887,57 @@ footer {
 
 /* ===== LOGIN MODAL ===== */
 
-.modal-login {
+.login-box {
     max-width: 420px;
-    border-radius: 18px;
     padding: 32px;
-    text-align: center;
+    border-radius: 18px;
 }
 
-.modal-login h2 {
-    font-size: 22px;
-    margin-bottom: 6px;
+/* TABS */
+.login-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
 }
 
-.login-subtitle {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 22px;
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    background: transparent;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .25s ease;
 }
 
-.modal-login input {
+.tab-btn.active {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* FORM */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.login-box input {
     width: 100%;
     padding: 14px;
     margin-bottom: 14px;
     border-radius: 30px;
     border: 1px solid #ddd;
-    font-size: 14px;
+    font-size: 13px;
 }
 
+/* BOTÓN */
 .btn-primary {
     width: 100%;
     padding: 14px;
@@ -921,33 +945,141 @@ footer {
     background: #111;
     color: #fff;
     border: none;
-    font-size: 13px;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+
+/**************************************************/
+
+
+/* ===== MI CUENTA ===== */
+
+.account-box {
+    max-width: 420px;
+    padding: 32px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.account-user {
+    font-size: 14px;
+    margin: 14px 0 26px;
+    color: #444;
+}
+
+.account-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.btn-account {
+    padding: 14px;
+    border-radius: 30px;
+    border: none;
+    background: #111;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.btn-account:hover {
+    opacity: .85;
+}
+
+.btn-account.outline {
+    background: transparent;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.btn-account.outline:hover {
+    border-color: #111;
+    color: #111;
+}
+
+
+
+
+/**************************************************/
+
+/* ===== CHECKOUT ===== */
+
+.checkout-box {
+    max-width: 480px;
+    padding: 32px;
+    border-radius: 20px;
+}
+
+.checkout-items {
+    margin: 24px 0;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item span {
+    color: #555;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.checkout-note {
+    margin-top: 14px;
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+}
+
+/* Botón principal (igual a comprar) */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    background: #111;
+    color: #fff;
+    border: none;
+    font-size: 12px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 .btn-primary:hover {
-    background: #000;
-}
-
-.login-note {
-    margin-top: 18px;
-    font-size: 11px;
-    color: #888;
-}
-
-.login-note span {
-    color: #111;
-    font-weight: 500;
-}
-
-/* ICONO USUARIO */
-.user-icon {
-    font-size: 20px;
-    cursor: pointer;
+    opacity: .85;
 }
 
 
 /**************************************************/
+
+
+
+/**************************************************/
+
+
+
+/**************************************************/
+
+
+
 /**************************************************/

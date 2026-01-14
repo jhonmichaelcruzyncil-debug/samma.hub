@@ -175,7 +175,6 @@ window.addEventListener("scroll", () => {
     });
 });
 
-/*********************************************/
 
 
 /*********************************************/
@@ -264,48 +263,167 @@ updateCartCount();
 /*********************************************/
 
 
-/* ================= LOGIN ================= */
+/* ================= LOGIN / REGISTER ================= */
 
 const loginBtn = document.getElementById("loginBtn");
 const loginModal = document.getElementById("loginModal");
 const closeLogin = document.getElementById("closeLogin");
-const loginSubmit = document.getElementById("loginSubmit");
 
-const loginEmail = document.getElementById("loginEmail");
-const loginPassword = document.getElementById("loginPassword");
+const tabs = document.querySelectorAll(".tab-btn");
+const contents = document.querySelectorAll(".tab-content");
 
-// ABRIR / CERRAR
+/* ABRIR LOGIN */
 loginBtn.addEventListener("click", e => {
     e.preventDefault();
-    loginModal.classList.add("show");
+
+    const isLogged = localStorage.getItem("isLogged");
+    if (isLogged) {
+        accountModal.classList.add("show");
+    } else {
+        loginModal.classList.add("show");
+    }
 });
 
+/* CERRAR */
 closeLogin.addEventListener("click", () => {
     loginModal.classList.remove("show");
 });
 
-// LOGIN
-loginSubmit.addEventListener("click", () => {
-    if (!loginEmail.value || !loginPassword.value) {
-        alert("Completa todos los campos");
-        return;
-    }
+/* TABS */
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
 
-    const user = {
-        email: loginEmail.value
-    };
-
-    localStorage.setItem("user", JSON.stringify(user));
-    loginModal.classList.remove("show");
-    updateUserUI();
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab + "Form").classList.add("active");
+    });
 });
 
-// MOSTRAR USUARIO LOGUEADO
-function updateUserUI() {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user && loginBtn) {
-        loginBtn.textContent = "Hola";
+/* LOGIN */
+document.getElementById("loginForm").addEventListener("submit", e => {
+    e.preventDefault();
+    localStorage.setItem("isLogged", true);
+    loginModal.classList.remove("show");
+    accountModal.classList.add("show");
+});
+
+/* REGISTER */
+document.getElementById("registerForm").addEventListener("submit", e => {
+    e.preventDefault();
+    localStorage.setItem("isLogged", true);
+    loginModal.classList.remove("show");
+    accountModal.classList.add("show");
+});
+
+
+/* ================= LOGIN FLOW CORRECTO ================= */
+
+// Al hacer click en el ícono
+loginBtn.addEventListener("click", e => {
+    e.preventDefault();
+
+    const logged = JSON.parse(localStorage.getItem("isLogged"));
+
+    if (logged) {
+        // ABRIR MODAL MI CUENTA
+        accountModal.classList.add("show");
+    } else {
+        // ABRIR MODAL LOGIN
+        loginModal.classList.add("show");
     }
+});
+
+
+/* ================= MI CUENTA ================= */
+
+const accountModal = document.getElementById("accountModal");
+const closeAccount = document.getElementById("closeAccount");
+const logoutBtn = document.getElementById("logoutBtn");
+
+/* ABRIR LOGIN O CUENTA */
+loginBtn.addEventListener("click", e => {
+    e.preventDefault();
+
+    if (localStorage.getItem("isLogged")) {
+        accountModal.classList.add("show");
+    } else {
+        loginModal.classList.add("show"); // tu modal login
+    }
+});
+
+/* CERRAR */
+closeAccount.addEventListener("click", () => {
+    accountModal.classList.remove("show");
+});
+
+/* LOGOUT */
+logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("isLogged");
+    localStorage.removeItem("userName");
+    accountModal.classList.remove("show");
+});
+
+/* ================= CHECKOUT ================= */
+
+const checkoutModal = document.getElementById("checkoutModal");
+const closeCheckout = document.getElementById("closeCheckout");
+const checkoutItems = document.getElementById("checkoutItems");
+const checkoutTotal = document.getElementById("checkoutTotal");
+const confirmOrder = document.getElementById("confirmOrder");
+const continueShopping = document.getElementById("continueShopping");
+
+/* ABRIR CHECKOUT DESDE CARRITO */
+checkoutBtn.addEventListener("click", () => {
+    cartModal.classList.remove("show");
+    renderCheckout();
+    checkoutModal.classList.add("show");
+});
+
+/* RENDER CHECKOUT */
+function renderCheckout() {
+    checkoutItems.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        const subtotal = item.price * item.qty;
+        total += subtotal;
+
+        checkoutItems.innerHTML += `
+            <div class="checkout-item">
+                <span>${item.name} x${item.qty}</span>
+                <strong>S/ ${subtotal.toFixed(2)}</strong>
+            </div>
+        `;
+    });
+
+    checkoutTotal.textContent = total.toFixed(2);
 }
 
-updateUserUI();
+/* CERRAR */
+closeCheckout.addEventListener("click", () => {
+    checkoutModal.classList.remove("show");
+});
+
+/* SEGUIR COMPRANDO */
+continueShopping.addEventListener("click", () => {
+    checkoutModal.classList.remove("show");
+});
+
+/* CONFIRMAR POR WHATSAPP */
+confirmOrder.addEventListener("click", () => {
+    let message = "Hola Samma.hub, quiero confirmar mi pedido:%0A%0A";
+    let total = 0;
+
+    cart.forEach((item, i) => {
+        message += `${i + 1}. ${item.name} x${item.qty} - S/ ${item.price}%0A`;
+        total += item.price * item.qty;
+    });
+
+    message += `%0ATotal: S/ ${total.toFixed(2)}`;
+
+    window.open(
+        `https://wa.me/51952773283?text=${message}`,
+        "_blank"
+    );
+});

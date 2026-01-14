@@ -55,10 +55,12 @@
     <a href="#shop">Tienda</a>
     <a href="#about">Nosotras</a>
     <a href="#" id="contactBtn">Contacto</a>
-
+    
     <a href="#cart" class="cart-icon">🛒</a>
 
     <a href="#" id="loginBtn" class="user-icon">👤</a>
+
+    
 
 </nav>
 
@@ -401,23 +403,90 @@
 
 <!-- MODAL LOGIN -->
 <div id="loginModal" class="modal">
-  <div class="modal-box modal-login">
+    <div class="modal-box login-box">
 
-    <span class="modal-close" id="closeLogin">&times;</span>
+        <span class="modal-close" id="closeLogin">&times;</span>
 
-    <h2>Bienvenida a Samma</h2>
-    <p class="login-subtitle">Accede a tu cuenta</p>
+        <!-- TABS -->
+        <div class="login-tabs">
+            <button class="tab-btn active" data-tab="login">Iniciar sesión</button>
+            <button class="tab-btn" data-tab="register">Crear cuenta</button>
+        </div>
 
-    <input type="email" id="loginEmail" placeholder="Correo electrónico">
-    <input type="password" id="loginPassword" placeholder="Contraseña">
+        <!-- LOGIN -->
+        <form id="loginForm" class="tab-content active">
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit" class="btn-primary">Entrar</button>
+        </form>
 
-    <button id="loginSubmit" class="btn-primary">Iniciar sesión</button>
+        <!-- REGISTRO -->
+        <form id="registerForm" class="tab-content">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit" class="btn-primary">Crear cuenta</button>
+        </form>
 
-    <p class="login-note">
-      ¿No tienes cuenta? <span>Se creará automáticamente</span>
-    </p>
+    </div>
+</div>
 
-  </div>
+
+<!-- MODAL MI CUENTA -->
+<div id="accountModal" class="modal">
+    <div class="modal-box account-box">
+
+        <span class="modal-close" id="closeAccount">&times;</span>
+
+        <h2>Mi cuenta</h2>
+
+        <p class="account-user">
+            Hola, <strong id="accountName">Samma Lover</strong> 💕
+        </p>
+
+        <div class="account-actions">
+            <button id="openWishlist" class="btn-account">
+                ❤️ Mis favoritos
+            </button>
+
+            <button id="logoutBtn" class="btn-account outline">
+                Cerrar sesión
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- MODAL CHECKOUT -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-box checkout-box">
+
+        <span class="modal-close" id="closeCheckout">&times;</span>
+
+        <h2>Resumen de tu pedido</h2>
+
+        <div id="checkoutItems" class="checkout-items">
+            <!-- JS inserta productos -->
+        </div>
+
+        <div class="checkout-total">
+            <p>Total</p>
+            <span>S/ <strong id="checkoutTotal">0.00</strong></span>
+        </div>
+
+        <button id="confirmOrder" class="btn-primary">
+            Confirmar pedido por WhatsApp
+        </button>
+
+        <button id="continueShopping" class="btn-outline">
+            Seguir comprando
+        </button>
+
+        <p class="checkout-note">
+            Tu pedido será confirmado por WhatsApp 💬
+        </p>
+
+    </div>
 </div>
 
 
