@@ -39,8 +39,17 @@ function saveCart() {
 }
 
 function updateCartCount() {
-    cartIcon.textContent = `🛒 ${cart.length}`;
+    if (!cartIcon) return;
+
+    let totalQty = 0;
+
+    cart.forEach(item => {
+        totalQty += item.qty;
+    });
+
+    cartIcon.textContent = `🛒 ${totalQty}`;
 }
+
 
 function renderCart() {
     cartItems.innerHTML = "";
@@ -54,7 +63,7 @@ function renderCart() {
                 <img src="${item.img}">
                 <div class="cart-item-info">
                     <p>${item.name}</p>
-                    <small>S/ ${item.price}</small>
+                    <small>S/ ${item.price.toFixed(2)}</small>
                 </div>
                 <div class="cart-item-actions">
                     <button onclick="changeQty(${index}, -1)">−</button>
@@ -66,10 +75,11 @@ function renderCart() {
         `;
     });
 
-    cartTotal.textContent = total.toFixed(2);
+    cartTotal.textContent = `S/ ${total.toFixed(2)}`;
     updateCartCount();
     saveCart();
 }
+
 
 function changeQty(index, amount) {
     cart[index].qty += amount;
@@ -94,6 +104,7 @@ closeCart.addEventListener("click", () => {
 });
 
 /* AGREGAR PRODUCTO */
+
 document.querySelectorAll(".add-to-cart").forEach(btn => {
     btn.addEventListener("click", () => {
         const product = {
@@ -104,15 +115,18 @@ document.querySelectorAll(".add-to-cart").forEach(btn => {
         };
 
         const existing = cart.find(p => p.name === product.name);
+
         if (existing) {
             existing.qty++;
         } else {
             cart.push(product);
         }
 
-        renderCart();
+        saveCart();
+        updateCartCount();
     });
 });
+
 
 /* WHATSAPP */
 checkoutBtn.addEventListener("click", () => {
@@ -129,6 +143,7 @@ checkoutBtn.addEventListener("click", () => {
 });
 
 updateCartCount();
+
 
 /* ================= ANIMACIÓN SCROLL ================= */
 const reveals = document.querySelectorAll(".reveal");
@@ -224,3 +239,5 @@ policyLink.addEventListener("click", e => {
 closePolicy.addEventListener("click", () => {
     policyModal.classList.remove("show");
 });
+
+updateCartCount();
