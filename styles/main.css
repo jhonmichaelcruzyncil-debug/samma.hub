@@ -884,5 +884,70 @@ footer {
 
 
 /**************************************************/
+
+/* ===== LOGIN MODAL ===== */
+
+.modal-login {
+    max-width: 420px;
+    border-radius: 18px;
+    padding: 32px;
+    text-align: center;
+}
+
+.modal-login h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.login-subtitle {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 22px;
+}
+
+.modal-login input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    background: #111;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #000;
+}
+
+.login-note {
+    margin-top: 18px;
+    font-size: 11px;
+    color: #888;
+}
+
+.login-note span {
+    color: #111;
+    font-weight: 500;
+}
+
+/* ICONO USUARIO */
+.user-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 /**************************************************/
 /**************************************************/

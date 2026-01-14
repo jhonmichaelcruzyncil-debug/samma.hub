@@ -241,3 +241,52 @@ closePolicy.addEventListener("click", () => {
 });
 
 updateCartCount();
+
+/*********************************************/
+
+
+/* ================= LOGIN ================= */
+
+const loginBtn = document.getElementById("loginBtn");
+const loginModal = document.getElementById("loginModal");
+const closeLogin = document.getElementById("closeLogin");
+const loginSubmit = document.getElementById("loginSubmit");
+
+const loginEmail = document.getElementById("loginEmail");
+const loginPassword = document.getElementById("loginPassword");
+
+// ABRIR / CERRAR
+loginBtn.addEventListener("click", e => {
+    e.preventDefault();
+    loginModal.classList.add("show");
+});
+
+closeLogin.addEventListener("click", () => {
+    loginModal.classList.remove("show");
+});
+
+// LOGIN
+loginSubmit.addEventListener("click", () => {
+    if (!loginEmail.value || !loginPassword.value) {
+        alert("Completa todos los campos");
+        return;
+    }
+
+    const user = {
+        email: loginEmail.value
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    loginModal.classList.remove("show");
+    updateUserUI();
+});
+
+// MOSTRAR USUARIO LOGUEADO
+function updateUserUI() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user && loginBtn) {
+        loginBtn.textContent = "Hola";
+    }
+}
+
+updateUserUI();
